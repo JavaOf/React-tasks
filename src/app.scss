@@ -44,7 +44,12 @@
   &-image {
     width: 100%;
     border-radius: 5px;
-    height: 500px;
+    height: 300px;
+  }
+  &-text{
+    margin: 5px 0;
+    font-size: 24px;
+    text-align: center;
   }
   &-close {
     position: absolute;
@@ -57,7 +62,7 @@
   &-content {
     position: absolute;
     background-color: #fff;
-    width: 50%;
+    width: 30%;
     padding: 20px;
     border: solid 1px;
     opacity: 0;
