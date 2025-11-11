@@ -2,27 +2,23 @@ import { useState } from "react";
 import "./app.scss";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [isModal, setIsModal] = useState(false);
 
-  const increment = () => {
-    if (count < 30) setCount((prev) => prev + 1);
+  const onClickModal = () => {
+    setIsModal((prev) => !prev);
   };
 
-  const decrement = () => {
-    if (count > 0) setCount((prev) => prev - 1);
-  };
 
   return (
-    <div className="clicker">
-      <h2 className="name">Count: </h2>
-      <h1 className="count">{count}</h1>
-      <div className="btns-content">
-        <button className="increment" onClick={increment}>
-          +1
-        </button>
-        <button className="decrement" onClick={decrement}>
-          -1
-        </button>
+    <div className="modal">
+      <button onClick={onClickModal} className="modal-btn">🪄Открыть</button>
+        <div className={`modal-content animated ${isModal ? 'show' : ''}`}>
+          <span onClick={onClickModal} className="modal-close">X</span>
+          <img
+          className="modal-image"
+            src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmJ3MHI4cDBpZjk4c2Y0MWFva25iZHNoM3ZsYzhtZXc3YmVkM2tqZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QAsBwSjx9zVKoGp9nr/giphy.gif" // можешь заменить на любой gif с Киану
+            alt="Keanu Reeves"
+          />
       </div>
     </div>
   );
